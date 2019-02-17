@@ -1,0 +1,27 @@
+db.produtos.aggregate([
+	{ $lookup:
+		{ from: "marcas",
+		localField: "marca_id",
+		foreignField: "_id",
+		as: "marca"
+		}
+	},
+	{ $match:
+		{ valor: 
+			{ $gte: 1000, $lte: 2000
+			}
+		}
+	},
+	{ $unwind:
+		{
+			path: "$marca",
+		}
+	},
+	{ $project:
+		{
+			_id: 0,
+			"marca.nome": 1,
+			descricao: 1
+		}
+	},
+])

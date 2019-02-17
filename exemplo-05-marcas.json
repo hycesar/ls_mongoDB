@@ -1,0 +1,18 @@
+db.marcas.insertMany([
+{
+  _id:1,
+  nome: "dell"
+},
+{
+  _id:2,
+  nome: "asus"
+},
+{
+  _id:3,
+  nome: "samsung"
+},
+{
+  _id:4,
+  nome: "lenovo"
+},
+])

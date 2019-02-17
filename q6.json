@@ -1,0 +1,40 @@
+db.marcas.aggregate([
+	{ $match:
+		{ nome: "lenovo"
+		}
+	},
+	{ $lookup:
+		{ from: "produtos",
+		localField: "_id",
+		foreignField: "marca_id",
+		as: "produto"
+		}
+	},
+	{ $unwind:
+		{
+			path: "$produto",
+			preserveNullAndEmptyArrays: true
+		}
+	},
+	{ $lookup:
+		{ from: "categorias",
+		localField: "produto.categoria_id",
+		foreignField: "_id",
+		as: "categoria"
+		}
+	},
+	{ $unwind:
+		{
+			path: "$categoria",
+			preserveNullAndEmptyArrays: false
+		}
+	},
+	{ $project:
+		{
+			_id: 0,
+			"produto.descricao": 1,
+			"produto.valor": 1,
+			"categoria.nome": 1
+		}
+	},
+]).pretty()

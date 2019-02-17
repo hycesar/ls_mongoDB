@@ -1,0 +1,35 @@
+db.produtos.aggregate([
+	{ $match: {
+		marca_id : {
+			$in:
+				db.marcas.distinct("_id", {nome: "dell"})
+			}
+		}
+	}
+]).pretty()
+
+db.marcas.aggregate([
+	{ $lookup:
+		{ from: "produtos",
+		localField: "_id",
+		foreignField: "marca_id",
+		as: "resultado"
+		}
+	},
+	{ $match:
+		{nome: "dell"
+		}
+	}
+]).pretty()
+
+
+
+
+
+
+
+
+
+
+
+

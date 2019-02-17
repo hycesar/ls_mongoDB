@@ -1,0 +1,72 @@
+db.produtos.insertMany([
+{
+  _id:1,
+  marca_id: 1,
+  categoria_id: 2,
+  descricao: "notebook core i7",
+  valor: 3000.00
+},
+{
+  _id:2,
+  marca_id: 1,
+  categoria_id: 3,
+  descricao: "fone de ouvido sem fio",
+  valor: 100.00
+},
+{
+  _id:3,
+  marca_id: 2,
+  categoria_id: 1,
+  descricao: "celular SO android",
+  valor: 1000.00
+},
+{
+  _id:4,
+  marca_id: 2,
+  categoria_id: 2,
+  descricao: "notebook core i5 ",
+  valor: 2000.00
+},
+{
+  _id:5,
+  marca_id: 3,
+  categoria_id: 1,
+  descricao: "celular galaxy j7 ",
+  valor: 1500.00
+},
+{
+  _id:6,
+  marca_id: 3,
+  categoria_id: 2,
+  descricao: "notebook ultrafino i3",
+  valor: 1500.00
+},
+{
+  _id:7,
+  marca_id: 3,
+  categoria_id: 3,
+  descricao: "fone de ouvido bluetooth",
+  valor: 150.00
+},
+{
+  _id:8,
+  marca_id: 3,
+  categoria_id: 4,
+  descricao: "tv 40 polegadas smart",
+  valor: 2100.00
+},
+{
+  _id:9,
+  marca_id: 4,
+  categoria_id: 1,
+  descricao: "celular k5",
+  valor: 600.00
+},
+{
+  _id:10,
+  marca_id: 4,
+  categoria_id: 2,
+  descricao: "notebook/tablet core i5",
+  valor: 2800.00
+}
+])
